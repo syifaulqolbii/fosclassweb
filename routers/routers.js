@@ -28,5 +28,8 @@ routes.get('/biodata',Biodata.kirimBiodata)
 // routes.get('/updatebarang/:id', Barang.UpdateBarang)
 
 routes.get('/tambahanggota', Anggota.TambahAnggotaView)
+routes.post('/tambahanggota', Anggota.TambahAnggota)
+routes.get('/dataanggota', Anggota.DataAnggotaView) 
+routes.get('/hapusanggota/:id', Anggota.HapusAnggota)
 
 module.exports = routes;

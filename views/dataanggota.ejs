@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Anggota Fosti 2021</title>
+  </head>
+  <body>
+    <%- include('partials/navbar', {title: "Anggota Fosti 2021"}); %>
+
+    <div class="container">
+        <h5>DATA ANGGOTA FOSTI</h5>
+        <a href="tambahanggota" type="button" class="btn btn-primary">Tambah Anggota</a>
+        <div class="row">
+            <div class="column">
+                <table class="table">
+                    <th>ID</th>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Jurusan</th>
+                    <th>Action</th>
+
+                    <% anggota.forEach(data => { %>
+                        <tr>
+                            <td><%= data.id %></td>
+                            <td><%= data.nama %></td>
+                            <td><%= data.nim %></td>
+                            <td><%= data.jurusan %></td>
+                            <td>
+                                <a href="" type="button" class="btn btn-success">Edit</a>
+                                <a onclick="confirm('Apakah anda yakin??');" href="hapusanggota/<%= data.id %>" type="button" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+  </body>
+</html>
